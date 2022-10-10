@@ -6,6 +6,9 @@
 #' @export
 
 euclidean <- function(a,b){
+  stopifnot(is.numeric(a) & is.numeric(b))
+  a <- abs(a)
+  b <- abs(b)
   while(a != b){
     if(a > b){
       c <- a - b
@@ -29,4 +32,5 @@ euclidean <- function(a,b){
 }
 ##########################################################################
 
-
+euclidean(100, 1000)
+euclidean(-100, 1000)

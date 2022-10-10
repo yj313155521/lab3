@@ -11,6 +11,10 @@
 
 
 dijkstra <- function(graph,init_node){
+  stopifnot(ncol(graph) == 3)
+  stopifnot(names(graph) == c("v1","v2","w"))
+  stopifnot(init_node <= max(graph[,1]))
+  stopifnot(is.data.frame(graph))
   v_1 <- graph$v1
   v_2 <- graph$v2
   w_1 <- graph$w
@@ -59,3 +63,5 @@ dijkstra <- function(graph,init_node){
   }
   return(vector_distance)
 }
+
+
